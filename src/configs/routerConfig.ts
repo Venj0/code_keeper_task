@@ -1,4 +1,1 @@
-export const RouterConfig = [
-    {},
-    {}
-]
+export const RouterConfig = [{}, {}]
