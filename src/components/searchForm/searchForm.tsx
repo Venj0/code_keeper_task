@@ -3,14 +3,9 @@ import { Input } from 'components/input'
 import { getYearsData } from 'components/searchForm/helper'
 import { Select } from 'components/select'
 import React, { FC, useCallback, useMemo, useState } from 'react'
+import { ISearchData } from 'services/search/types'
 import { voidFn } from 'types'
 import './searchForm.scss'
-
-export interface ISearchData {
-  text: string
-  startYear?: string
-  endYear?: string
-}
 
 interface ISearchFormProps {
   onSearch?: voidFn<ISearchData>

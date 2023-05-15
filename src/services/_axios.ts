@@ -7,7 +7,7 @@ const axios = axiosDefault.create({
 })
 
 type tAxios = (baseUrl: tServiceUrls) => {
-  get: <TRes = anyObject>(url: string) => Promise<AxiosResponse<TRes, any>>
+  get: <TRes = anyObject>(url: string, params?: anyObject) => Promise<AxiosResponse<TRes, any>>
   put: <TRes = anyObject, TReq = anyObject>(
     url: string,
     data: TReq,
@@ -27,7 +27,7 @@ type tAxios = (baseUrl: tServiceUrls) => {
 }
 
 export const Axios: tAxios = baseUrl => ({
-  get: url => axios.get(`${getServiceUrl(baseUrl)}/${url}`),
+  get: (url, params) => axios.get(`${getServiceUrl(baseUrl)}/${url}`, params),
   put: (url, data, configs) => axios.put(`${getServiceUrl(baseUrl)}/${url}`, data, configs),
   patch: (url, data, configs) => axios.patch(`${getServiceUrl(baseUrl)}/${url}`, data, configs),
   post: (url, data, configs) => axios.post(`${getServiceUrl(baseUrl)}/${url}`, data, configs),
