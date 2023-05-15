@@ -1,0 +1,9 @@
+@import 'assets/styles/mixins';
+
+.search-page {
+  @include flex();
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  gap: 20px;
+}

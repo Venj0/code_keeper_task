@@ -15,15 +15,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": "./src",
-    "paths": {
-      "@components/*": ["./components/*"],
-      "@config/*": ["./config/*"],
-      "@context/*": ["./context/*"],
-      "@services/*": ["./services/*"],
-      "@hooks/*": ["./hooks/*"],
-      "@types": ["./types"]
-    }
+    "baseUrl": "./src"
   },
   "include": ["src"]
 }

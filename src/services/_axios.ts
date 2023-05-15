@@ -1,5 +1,5 @@
 import { getServiceUrl, tServiceUrls } from './urls'
-import { anyObject } from '@types'
+import { anyObject } from 'types'
 import axiosDefault, { AxiosResponse } from 'axios'
 
 const axios = axiosDefault.create({

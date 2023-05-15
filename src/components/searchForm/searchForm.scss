@@ -1,0 +1,79 @@
+@import 'assets/styles/mixins';
+@import 'assets/fonts';
+
+$selectWidth: 130px;
+$btnWidth: 40px;
+$gap: 20px;
+$gapMob: 12px;
+
+.search-form {
+  width: 90%;
+  max-width: 1000px;
+  box-shadow: 0 0 18px #0000005e;
+  border-radius: 25px;
+  padding: 25px;
+  @include flex(center, space-between);
+  flex-wrap: wrap;
+  gap: $gap;
+  @include mobile() {
+    gap: $gapMob;
+  }
+
+  &-input {
+    order: 1;
+    width: calc(100% - #{$btnWidth + 2 * $selectWidth + 4 * $gap});
+    @include mobile() {
+      width: calc(100% - #{$btnWidth + $gapMob});
+    }
+
+    input {
+      @include font-h3();
+      padding: 10px 20px;
+      @include transition();
+      border-radius: 12px;
+      width: 100%;
+
+      &:focus {
+        box-shadow: 0 0 3px #00000041;
+      }
+    }
+  }
+
+  &-selects {
+    order: 2;
+    gap: $gap;
+
+    @include mobile() {
+      width: 100%;
+      gap: $gapMob;
+      order: 3;
+    }
+    @include flex();
+
+    .select {
+      width: 130px;
+      @include font-body();
+    }
+  }
+
+  &-button {
+    order: 3;
+    width: $btnWidth;
+    @include mobile() {
+      order: 2;
+    }
+
+    button {
+      width: $btnWidth;
+      height: $btnWidth;
+      background: unset;
+      border-radius: 8px;
+
+      &:hover {
+        transform: scale(1.2);
+        @include transition();
+        box-shadow: 0 0 3px #00000041;
+      }
+    }
+  }
+}
