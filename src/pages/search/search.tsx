@@ -10,7 +10,8 @@ export const Search: FC = () => {
   const [getSearchResultFetch, getSearchResultStatus] = useQuery<any, ISearchData>(getSearchResult)
   const onSearch = async (data: ISearchData) => {
     console.log(data)
-    await getSearchResultFetch(data)
+    const res = await getSearchResultFetch(data)
+    console.log({ res })
   }
   return (
     <LoadingWrapper className="search-page" isLoading={getSearchResultStatus.isLoading}>

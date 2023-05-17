@@ -6,6 +6,19 @@ const axios = axiosDefault.create({
   // baseURL:BaseUrl,
 })
 
+axios.interceptors.request.use(
+  function (config) {
+    if (config.headers) {
+      config.headers['Content-Type'] = 'application/json'
+      config.headers['media_type'] = 'image'
+    }
+    return config
+  },
+  // function(err) {
+  //   return Promise.reject(err)
+  // },
+)
+
 type tAxios = (baseUrl: tServiceUrls) => {
   get: <TRes = anyObject>(url: string, params?: anyObject) => Promise<AxiosResponse<TRes, any>>
   put: <TRes = anyObject, TReq = anyObject>(
