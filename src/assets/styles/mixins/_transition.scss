@@ -1,0 +1,15 @@
+$transition-base: all 0.5s ease-in-out !default;
+
+@mixin transition($transition...) {
+  @if length($transition) == 0 {
+    -webkit-transition: $transition-base;
+    -moz-transition: $transition-base;
+    -o-transition: $transition-base;
+    transition: $transition-base;
+  } @else {
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    transition: $transition;
+  }
+}
